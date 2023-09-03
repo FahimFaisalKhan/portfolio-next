@@ -1,0 +1,61 @@
+//defining scss variable
+//light theme
+@use "variables" as *; //importing variables without prefix
+//converting scss variable into css variable
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="system"],
+  html[data-theme="dark"] {
+    @each $name, $color in $colors-dark {
+      --color-#{$name}: #{$color};
+    }
+    --theme: "dark";
+  }
+  html[data-theme="light"] {
+    @each $name, $color in $colors {
+      --color-#{$name}: #{$color};
+    }
+    --theme: "light";
+  }
+}
+@media (prefers-color-scheme: light) {
+  html[data-theme="system"],
+  html[data-theme="light"] {
+    @each $name, $color in $colors {
+      --color-#{$name}: #{$color};
+    }
+    --theme: "light";
+  }
+  html[data-theme="dark"] {
+    @each $name, $color in $colors-dark {
+      --color-#{$name}: #{$color};
+    }
+    --theme: "dark";
+  }
+}
+
+// html[data-theme="dark"] {
+//   :root {
+//     @each $name, $color in $colors-dark {
+//       --color-#{$name}: #{$color};
+//     }
+//     --theme: "dark";
+//   }
+// }
+// html[data-theme="light"] {
+//   :root {
+//     @each $name, $color in $colors {
+//       --color-#{$name}: #{$color};
+//     }
+//     --theme: "light";
+//   }
+// }
+//creating a function to get color instead of using css varible
+@function getColor($color-name) {
+  @return var(--color-#{$color-name});
+}
+
+//using get() function to get the value of a css variable
+@function getValue($variable-name) {
+  @return get("--#{$variable-name}");
+}

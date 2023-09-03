@@ -1,0 +1,27 @@
+@use "globals";
+body {
+  background: globals.getColor(base);
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background: globals.getColor(base);
+  color: globals.getColor(text);
+  margin-top: 50px;
+  .card {
+    height: auto;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background: globals.getColor(base2);
+    padding: 20px;
+    h1 {
+      &:after {
+        content: var(--theme);
+      }
+    }
+    p {
+      color: globals.getColor(text2);
+    }
+  }
+}
