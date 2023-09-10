@@ -1,3 +1,4 @@
+@use "variables" as *;
 @mixin clearfix {
   &::after {
     content: "";
@@ -22,24 +23,78 @@
 // }
 
 @mixin respond($breakpoint) {
-  @if $breakpoint ==phone {
-    @media (max-width: 37.5em) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: $phone) {
       @content;
     }
   }
-  @if $breakpoint ==tab-port {
-    @media (max-width: 56.25em) {
+  @if $breakpoint == phone-tab {
+    @media screen and (min-width: $phone) {
       @content;
     }
   }
-  @if $breakpoint ==tab-land {
-    @media (max-width: 75em) {
+  @if $breakpoint ==tab-tablg {
+    @media screen and (min-width: $tablet) {
       @content;
     }
   }
-  @if $breakpoint ==big-desktop {
-    @media (min-width: 112.5em) {
+  @if $breakpoint == tablg-laptop {
+    @media screen and (min-width: $tablet-lg) {
       @content;
     }
+  }
+  @if $breakpoint == laptop-laptopmd {
+    @media screen and (min-width: $laptop) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptopmd-laptoplg {
+    @media screen and (min-width: $laptop-md) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptoplg-desktop {
+    @media screen and (min-width: $laptop-lg) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-desktoplg {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktoplg-upper {
+    @media screen and (min-width: $desktop-lg) {
+      @content;
+    }
+  }
+}
+@mixin responsive-max-width {
+  @include respond(phone) {
+    max-width: 100%;
+  }
+  @include respond(phone-tab) {
+    max-width: 540px;
+  }
+  @include respond(tab-tablg) {
+    max-width: 720px;
+  }
+  @include respond(tablg-laptop) {
+    max-width: 960px;
+  }
+  @include respond(laptop-laptopmd) {
+    max-width: 1140px;
+  }
+  @include respond(laptopmd-laptoplg) {
+    max-width: 1320px;
+  }
+  @include respond(laptoplg-desktop) {
+    max-width: 1500px;
+  }
+  @include respond(desktop-desktoplg) {
+    max-width: 1650px;
+  }
+  @include respond(desktoplg-upper) {
+    max-width: 1920px;
   }
 }

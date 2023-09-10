@@ -46,10 +46,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <Navbar />
-        <main style={{ background: "#0000FF", height: "100vh" }}>
-          {" "}
-          {children}
-        </main>
+        <main style={{ height: "200vh" }}>{children}</main>
       </body>
     </html>
   );

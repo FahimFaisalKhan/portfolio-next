@@ -1,5 +1,5 @@
 @use "theming.scss" as *;
-
+@use "_mixins" as mx;
 //SASS VARIABLES
 
 // COLORS
@@ -50,57 +50,58 @@ $desktop-lg: 2000px;
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  overflow-x: hidden;
-}
+// html {
+//   overflow-x: clip;
+// }
 body {
   background: var(--base);
   margin: 0 auto;
   padding: 0;
+  @include mx.responsive-max-width;
 }
 
-@media screen and (max-width: $phone) {
-  body {
-    max-width: 100%;
-  }
-}
-@media screen and (min-width: $phone) {
-  body {
-    max-width: 540px;
-  }
-}
-@media screen and (min-width: $tablet) {
-  body {
-    max-width: 720px;
-  }
-}
-@media screen and (min-width: $tablet-lg) {
-  body {
-    max-width: 960px;
-  }
-}
-@media screen and (min-width: $laptop) {
-  body {
-    max-width: 1140px;
-  }
-}
-@media screen and (min-width: $laptop-md) {
-  body {
-    max-width: 1320px;
-  }
-}
-@media screen and (min-width: $laptop-lg) {
-  body {
-    max-width: 1500px;
-  }
-}
-@media screen and (min-width: $desktop) {
-  body {
-    max-width: 1650px;
-  }
-}
-@media screen and (min-width: $desktop-lg) {
-  body {
-    max-width: 1920px;
-  }
-}
+// @media screen and (max-width: $phone) {
+//   body {
+//     max-width: 100%;
+//   }
+// }
+// @media screen and (min-width: $phone) {
+//   body {
+//     max-width: 540px;
+//   }
+// }
+// @media screen and (min-width: $tablet) {
+//   body {
+//     max-width: 720px;
+//   }
+// }
+// @media screen and (min-width: $tablet-lg) {
+//   body {
+//     max-width: 960px;
+//   }
+// }
+// @media screen and (min-width: $laptop) {
+//   body {
+//     max-width: 1140px;
+//   }
+// }
+// @media screen and (min-width: $laptop-md) {
+//   body {
+//     max-width: 1320px;
+//   }
+// }
+// @media screen and (min-width: $laptop-lg) {
+//   body {
+//     max-width: 1500px;
+//   }
+// }
+// @media screen and (min-width: $desktop) {
+//   body {
+//     max-width: 1650px;
+//   }
+// }
+// @media screen and (min-width: $desktop-lg) {
+//   body {
+//     max-width: 1920px;
+//   }
+// }

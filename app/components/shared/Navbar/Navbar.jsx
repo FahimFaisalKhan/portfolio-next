@@ -1,9 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HamButton from "./kids/HamButton";
 
 const Navbar = () => {
   const [hamOpen, setHamopen] = useState(false);
+  useEffect(() => {
+    const htmlElem = document.getElementsByTagName("html")[0];
+    if (hamOpen) {
+      htmlElem.style.overflowY = "hidden";
+    } else {
+      htmlElem.style.overflowY = "auto";
+    }
+  }, [hamOpen]);
   return (
     <div className={`ham ${hamOpen ? "h-full-vh" : "h-null"}`}>
       <HamButton hamOpen={hamOpen} setHamopen={setHamopen} />
@@ -13,7 +21,7 @@ const Navbar = () => {
         }`}
       ></div>
       <nav
-        className={`ham-content ${
+        className={`ham-content  ${
           !hamOpen ? "highly-invisible " : " highly-visible transition-slow"
         }`}
         style={{ color: "#0000FF" }}

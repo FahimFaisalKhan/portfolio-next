@@ -1,14 +1,23 @@
+@use "_mixins" as mx;
 .ham {
-  position: relative;
+  position: fixed;
   // height: 100vh;
+  //
+  // height: 100vh;
+  margin-top: 1rem;
 
+  width: 1920px;
+  min-height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  @include mx.responsive-max-width;
   & &-button {
-    position: fixed;
-    right: 1.5rem;
-    top: 1.5rem;
+    position: sticky;
+
+    top: 0rem;
     width: 7rem;
     height: 6rem;
-    z-index: 500;
+    z-index: 1000;
 
     padding: 1.5rem;
     cursor: pointer;
@@ -73,25 +82,27 @@
   }
 
   & &-body {
-    position: fixed;
+    position: absolute;
     right: 1.5rem;
     top: 1.5rem;
     width: 7rem;
     height: 6rem;
     border-radius: 100%;
     background: var(--secondary);
+    max-height: 100vh;
 
-    overflow: hidden;
     transition: all 0.5s;
 
     &-opened {
     }
   }
-  &-content {
+  & &-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    // width: 100vw;
+    // height: 100vh;
     // z-index: 500;
   }
 }
