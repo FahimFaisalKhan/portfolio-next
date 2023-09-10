@@ -1,6 +1,8 @@
 //defining scss variable
 //light theme
-@use "variables" as *; //importing variables without prefix
+@use "variables" as *;
+
+//importing variables without prefix
 //converting scss variable into css variable
 
 @media (prefers-color-scheme: dark) {

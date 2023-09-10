@@ -1,13 +1,24 @@
-$colors: (
-  base: #ffffff,
-  text: #000000,
-  base2: #eeeeee,
-  text2: #111111,
-);
 //dark theme
 $colors-dark: (
+  text: #eeeeee,
+  text2: #ffe270,
+
   base: #000000,
-  text: #ffffff,
-  base2: #111111,
-  text2: #eeeeee,
+  secondary: #222222,
+  tertiary: #4e4e4e,
+  quaternary: #999999,
+  quinary: #d8d8d8,
+  focus: #7bf1c8,
+);
+
+//light-theme
+$colors: (
+  text: #111111,
+  text2: #034748,
+  base: #ffffff,
+  secondary: #bbbbbb,
+  tertiary: #727474,
+  quaternary: #383838,
+  quinary: #121212,
+  focus: #23231a,
 );

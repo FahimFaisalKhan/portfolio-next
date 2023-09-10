@@ -1,0 +1,32 @@
+.hidden {
+  visibility: hidden;
+  scale: 0;
+}
+.block {
+  visibility: visible;
+}
+.highly-visible {
+  visibility: visible;
+  z-index: 500;
+  opacity: 1;
+}
+.highly-invisible {
+  visibility: hidden;
+  z-index: -500;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+}
+.scale-up-overflow {
+  scale: 50;
+}
+.h-full-vh {
+  height: 100vh;
+}
+.h-null {
+  height: 0;
+}

@@ -1,0 +1,102 @@
+.ham {
+  position: relative;
+  // height: 100vh;
+
+  & &-button {
+    position: fixed;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 7rem;
+    height: 6rem;
+    z-index: 500;
+
+    padding: 1.5rem;
+    cursor: pointer;
+    border-radius: var(--rounded-xs);
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    & .line {
+      background: var(--text2);
+      transition: all 0.5s;
+      height: 3px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      border-radius: var(--rounded-xs);
+
+      &-1,
+      &-3 {
+        width: 100%;
+        max-width: 64px;
+        transform-origin: 50% 50%;
+        left: 50%;
+
+        // transition-delay: 0.5s;
+      }
+      &-1 {
+        top: 33%;
+      }
+
+      &-2 {
+        width: 35%;
+        margin-left: auto;
+        top: 50%;
+        right: 5px;
+        opacity: 1;
+      }
+      &-3 {
+        top: 66%;
+      }
+    }
+    &:hover {
+      background: var(--secondary);
+    }
+    &-clicked {
+      & .line {
+        &-2 {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &-1-clicked {
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(135deg);
+        }
+        &-3-clicked {
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  & &-body {
+    position: fixed;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 7rem;
+    height: 6rem;
+    border-radius: 100%;
+    background: var(--secondary);
+
+    overflow: hidden;
+    transition: all 0.5s;
+
+    &-opened {
+    }
+  }
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // z-index: 500;
+  }
+}
+
+.transition-slow {
+  transition: z-index 0.75s step-start, opacity 0.75s linear,
+    visibility 0.75s linear;
+}

@@ -1,0 +1,106 @@
+@use "theming.scss" as *;
+
+//SASS VARIABLES
+
+// COLORS
+
+$text: getColor(text);
+$text2: getColor(text2);
+$base: getColor(base);
+$secondary: getColor(secondary);
+$tertiary: getColor(tertiary);
+$quaternary: getColor(quaternary);
+$quinary: getColor(quinary);
+$focus: getColor(focus);
+
+//CSS VARIABLES
+
+$phone: 576px;
+$tablet: 768px;
+$tablet-lg: 992px;
+$laptop: 1200px;
+$laptop-md: 1400px;
+$laptop-lg: 1600px;
+$desktop: 1800px;
+$desktop-lg: 2000px;
+
+:root {
+  //colors
+
+  --text: #{$text};
+  --text2: #{$text2};
+  --base: #{$base};
+  --secondary: #{$secondary};
+  --tertiary: #{$tertiary};
+  --quaternary: #{$quaternary};
+  --quinary: #{$quinary};
+  --focus: #{$focus};
+
+  //fonts
+
+  --fam-title: var(--font-chakrap);
+  --fam-regular: var(--font-ubuntum);
+  --fam-hand: var(--font-arizonia);
+  --xxl: 50px;
+  --rounded-xs: 5px;
+  --rounded-sm: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  background: var(--base);
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media screen and (max-width: $phone) {
+  body {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: $phone) {
+  body {
+    max-width: 540px;
+  }
+}
+@media screen and (min-width: $tablet) {
+  body {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: $tablet-lg) {
+  body {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: $laptop) {
+  body {
+    max-width: 1140px;
+  }
+}
+@media screen and (min-width: $laptop-md) {
+  body {
+    max-width: 1320px;
+  }
+}
+@media screen and (min-width: $laptop-lg) {
+  body {
+    max-width: 1500px;
+  }
+}
+@media screen and (min-width: $desktop) {
+  body {
+    max-width: 1650px;
+  }
+}
+@media screen and (min-width: $desktop-lg) {
+  body {
+    max-width: 1920px;
+  }
+}
