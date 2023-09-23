@@ -1,0 +1,17 @@
+@use "_mixins" as mx;
+.draw-line {
+  //   height: 250px;
+  stroke: aqua;
+  stroke-width: 4px;
+  fill: transparent;
+  stroke-dasharray: 435;
+  stroke-dashoffset: 435;
+
+  animation: animate 10s forwards;
+}
+
+@include mx.keyframes(animate) {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

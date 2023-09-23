@@ -22,45 +22,87 @@
 //     };
 // }
 
-@mixin respond($breakpoint) {
+@mixin respond($breakpoint, $atw: true) {
   @if $breakpoint == phone {
     @media screen and (max-width: $phone) {
       @content;
     }
   }
   @if $breakpoint == phone-tab {
-    @media screen and (min-width: $phone) {
-      @content;
+    @if $atw {
+      @media screen and (min-width: $phone) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $phone) and (max-width: $tablet) {
+        @content;
+      }
     }
   }
-  @if $breakpoint ==tab-tablg {
-    @media screen and (min-width: $tablet) {
-      @content;
+  @if $breakpoint == tab-tablg {
+    @if $atw {
+      @media screen and (min-width: $tablet) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $tablet) and (max-width: $tablet-lg) {
+        @content;
+      }
     }
   }
   @if $breakpoint == tablg-laptop {
-    @media screen and (min-width: $tablet-lg) {
-      @content;
+    @if $atw {
+      @media screen and (min-width: $tablet-lg) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $tablet-lg) and (max-width: $laptop) {
+        @content;
+      }
     }
   }
   @if $breakpoint == laptop-laptopmd {
-    @media screen and (min-width: $laptop) {
-      @content;
+    @if $atw {
+      @media screen and (min-width: $laptop) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $laptop) and (max-width: $laptop-md) {
+        @content;
+      }
     }
   }
   @if $breakpoint == laptopmd-laptoplg {
-    @media screen and (min-width: $laptop-md) {
-      @content;
+    @if $atw {
+      @media screen and (min-width: $laptop-md) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $laptop-md) and (max-width: $laptop-lg) {
+        @content;
+      }
     }
   }
   @if $breakpoint == laptoplg-desktop {
-    @media screen and (min-width: $laptop-lg) {
-      @content;
+    @if $atw {
+      @media screen and (min-width: $laptop-lg) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $laptop-lg) and (max-width: $desktop) {
+        @content;
+      }
     }
   }
   @if $breakpoint == desktop-desktoplg {
-    @media screen and (min-width: $desktop) {
-      @content;
+    @if $atw {
+      @media screen and (min-width: $desktop) {
+        @content;
+      }
+    } @else {
+      @media screen and (min-width: $desktop) and (max-width: $desktop-lg) {
+        @content;
+      }
     }
   }
   @if $breakpoint == desktoplg-upper {
@@ -69,6 +111,7 @@
     }
   }
 }
+
 @mixin responsive-max-width {
   @include respond(phone) {
     max-width: 100%;
@@ -96,5 +139,14 @@
   }
   @include respond(desktoplg-upper) {
     max-width: 1920px;
+  }
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
   }
 }

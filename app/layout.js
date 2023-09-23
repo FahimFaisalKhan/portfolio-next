@@ -6,7 +6,12 @@ import "/styles/global.scss";
 // import "/styles/mixins.sass";
 // import "/styles/home.scss";
 import "styles/all_modules.scss";
-import { Arizonia, Ubuntu_Mono, Chakra_Petch } from "next/font/google";
+import {
+  Arizonia,
+  Ubuntu_Mono,
+  Chakra_Petch,
+  Montserrat,
+} from "next/font/google";
 import Navbar from "./components/shared/Navbar/Navbar";
 
 // FONTS
@@ -29,6 +34,12 @@ const chakraPetch = Chakra_Petch({
   variable: "--font-chakrap",
   weight: ["600", "700"],
 });
+const mons = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mons",
+  weight: ["600", "700"],
+});
 
 //META
 export const metadata = {
@@ -42,11 +53,14 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="system"
-      className={` ${chakraPetch.variable} ${arizonia.variable} ${ubuntuMono.variable}`}
+      className={` ${chakraPetch.variable} ${arizonia.variable} ${ubuntuMono.variable} ${mons.variable}`}
     >
       <body>
-        <Navbar />
-        <main style={{ height: "200vh" }}>{children}</main>
+        <div>
+          <Navbar />
+        </div>
+
+        <main>{children}</main>
       </body>
     </html>
   );
