@@ -6,7 +6,14 @@
 // @use "./_site_variables.scss" ;
 @use "./utils.scss";
 
-@use "./_home.scss";
+@use "home/_home.scss";
 
 @use "shared/_hamburger.scss";
+@use "shared/scrollbar.scss";
 @use "home/name.scss";
+@use "home/intro.scss";
+@use "home/banner.scss";
+@use "home/projects.scss";
+@use "home/skills.scss";
+
+@use "home/other-works.scss";

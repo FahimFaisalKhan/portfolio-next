@@ -5,7 +5,7 @@ import "/styles/global.scss";
 // import "/styles/_site_variables.scss";
 // import "/styles/mixins.sass";
 // import "/styles/home.scss";
-import "styles/all_modules.scss";
+import "/styles/all_modules.scss";
 import {
   Arizonia,
   Ubuntu_Mono,
@@ -13,6 +13,11 @@ import {
   Montserrat,
 } from "next/font/google";
 import Navbar from "./components/shared/Navbar/Navbar";
+import StoreProvider from "./store-provider";
+import { getData } from "@/utils/server/getData";
+import ReduxInitialData from "./wrapper-data";
+import ScrollBar from "./components/shared/ScrollBar/ScrollBar";
+import Wrapper from "./wrapper-main";
 
 // FONTS
 
@@ -48,20 +53,27 @@ export const metadata = {
 };
 
 //COMPONENT
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const data = await getData();
+
+  // console.log("?", data);
   return (
     <html
       lang="en"
       data-theme="system"
-      className={` ${chakraPetch.variable} ${arizonia.variable} ${ubuntuMono.variable} ${mons.variable}`}
+      className={` ${chakraPetch.variable} ${arizonia.variable} ${ubuntuMono.variable} ${mons.variable} ${ubuntuMono.className}`}
     >
-      <body>
-        <div>
+      <StoreProvider>
+        <ReduxInitialData data={data} />
+        <body id="main-body" className="hide-scrollbar  relative">
+          <ScrollBar />
           <Navbar />
-        </div>
 
-        <main>{children}</main>
-      </body>
+          <Wrapper>
+            <main>{children}</main>
+          </Wrapper>
+        </body>
+      </StoreProvider>
     </html>
   );
 }

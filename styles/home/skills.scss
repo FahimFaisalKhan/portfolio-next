@@ -1,0 +1,175 @@
+@use "_mixins" as mx;
+.carousel-x {
+  overflow-x: scroll;
+  display: flex;
+  column-gap: 3rem;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  scroll-behavior: smooth;
+
+  display: flex;
+  overflow-x: scroll;
+  // display: flex;
+  // column-gap: 3rem;
+
+  // overflow-x: scroll;
+  width: fit-content;
+  transform: translateX(1%);
+  // animation: scroll-skills linear infinite;
+  // animation-duration: var(--slider-anm-time);
+  &-container {
+    --webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent
+    );
+  }
+  // &:hover {
+  //   transform: translateX(-77%);
+  // }
+}
+
+.animate-slider {
+  animation: scroll-skills linear infinite;
+  animation-duration: var(--slider-anm-time);
+}
+// @include mx.keyframes(scroll-skills) {
+//   to {
+//     transform: translateX(-75.43%);
+//     // transform: translateX(-81%);
+//   }
+// }
+// .carousel-x:hover {
+//   scroll-behavior: auto;
+//   animation-play-state: paused;
+// }
+// .carousel-x:hover .skill-card-container {
+//   transform: translateX(6px);
+// }
+
+.carousel-x::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+.skill-card {
+  width: 175px;
+  cursor: pointer;
+  min-height: 175px;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  // background-image: linear-gradient(to right bottom, var(--base), red);
+  padding: 10px;
+
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flt_svg {
+  visibility: hidden;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+}
+.slide-to-begin-transform {
+}
+.skill-card-container {
+  filter: url("#flt_tag");
+
+  // transform: translateX(-4900px);
+  // transition: all 1s;
+
+  // height: attr(tank-content);
+}
+
+.skill-card-container-anm {
+  animation: scroll-horizontal 30s linear infinite;
+  // transform: translateX(6px);
+}
+// .skill-card-container-pause-anm {
+//   animation-play-state: paused;
+// }
+
+// .skill-card-container::selection,
+// .skill-card::selection,
+// .skill-card-content::selection,
+.skill-card-img::selection {
+  background-color: transparent;
+}
+.skill-modal {
+  background: rgba(0, 0, 0, 0.85);
+  // background: red;
+  position: fixed;
+  transition: all 1s;
+  transform-origin: center;
+
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &-hidden {
+    transform: scale(0);
+    z-index: -1000;
+  }
+  &-shown {
+    transform: scale(1);
+    z-index: 1000;
+
+    // transform: translate(-50%, -50%);
+  }
+  &-body {
+    width: 40%;
+    height: auto;
+    border-radius: var(--rounded-lg);
+    margin-top: 10rem;
+    position: relative;
+    &-header {
+      display: flex;
+      align-items: center;
+      column-gap: 2rem;
+      margin-bottom: 1rem;
+      &-title {
+        font-size: var(--font-ml);
+      }
+    }
+  }
+}
+.ins-modal {
+  background: rgba(0, 0, 0, 0.89);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4500;
+}
+
+// @keyframes scroll-horizontal {
+//   0% {
+//     transform: translateX(25%);
+//   }
+//   50% {
+//     transform: translateX(-2085%);
+//   }
+//   100% {
+//     transform: translateX(25%);
+//   }
+// }

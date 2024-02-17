@@ -1,0 +1,17 @@
+.other-works-cards {
+  position: relative;
+
+  &-indiv {
+    position: sticky;
+    left: 0;
+    height: 5rem;
+    &-scrapping {
+      top: 2rem;
+      background: red;
+    }
+    &-games {
+      top: 4rem;
+      background: blue;
+    }
+  }
+}

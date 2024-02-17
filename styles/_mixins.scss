@@ -13,6 +13,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@mixin fixedCenter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 //MEDIA QUERY MANAGER
 
@@ -112,7 +118,7 @@
   }
 }
 
-@mixin responsive-max-width {
+@mixin responsive-max-width($lg: false) {
   @include respond(phone) {
     max-width: 100%;
   }
@@ -128,18 +134,25 @@
   @include respond(laptop-laptopmd) {
     max-width: 1140px;
   }
-  @include respond(laptopmd-laptoplg) {
-    max-width: 1320px;
+  @if $lg {
+    @include respond(laptopmd-laptoplg) {
+      max-width: 1600px;
+    }
+  } @else {
+    @include respond(laptopmd-laptoplg) {
+      max-width: 1280px;
+    }
   }
-  @include respond(laptoplg-desktop) {
-    max-width: 1500px;
-  }
-  @include respond(desktop-desktoplg) {
-    max-width: 1650px;
-  }
-  @include respond(desktoplg-upper) {
-    max-width: 1920px;
-  }
+
+  // @include respond(laptoplg-desktop) {
+  //   max-width: 1500px;
+  // }
+  // @include respond(desktop-desktoplg) {
+  //   max-width: 1650px;
+  // }
+  // @include respond(desktoplg-upper) {
+  //   max-width: 1920px;
+  // }
 }
 
 @mixin keyframes($animation-name) {

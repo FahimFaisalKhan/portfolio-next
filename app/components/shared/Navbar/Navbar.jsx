@@ -2,6 +2,16 @@
 import React, { useEffect, useState } from "react";
 import HamButton from "./kids/HamButton";
 import Link from "next/link";
+import Image from "next/image";
+import { logo } from "@/public/images";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import HomeIcon from "@mui/icons-material/Home";
+import DownloadIcon from "@mui/icons-material/Download";
+import AccountTreeRoundedIcon from "@mui/icons-material/AccountTreeRounded";
+import AutoStoriesRoundedIcon from "@mui/icons-material/AutoStoriesRounded";
+import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 
 const Navbar = () => {
   const [hamOpen, setHamopen] = useState(false);
@@ -13,38 +23,233 @@ const Navbar = () => {
   //     htmlElem.style.overflowY = "auto";
   //   }
   // }, [hamOpen]);
+  // useEffect(() => {
+  //   console.log(document.querySelectorAll(".nav-content-menu-item-long"));
+  // }, []);
   return (
-    <section className="ham-container">
-      <div className={`ham ${hamOpen ? "h-full-vh" : ""}`}>
+    <>
+      <div className="ham">
         <HamButton hamOpen={hamOpen} setHamopen={setHamopen} />
+        <div className="logo-box z-max">
+          <div className="logo-container logo-container-front">
+            <Image
+              className="logo"
+              width={70}
+              height={70}
+              src={logo}
+              alt="Fahim Logo"
+            />
+          </div>
+          <div className="logo-container logo-container-back">
+            <Image
+              className="logo"
+              width={70}
+              height={70}
+              src={logo}
+              alt="Fahim Logo"
+            />
+          </div>
+        </div>
+
         <div
-          className={`ham-body ${
-            !hamOpen ? "hidden " : "block scale-up-overflow ham-body-opened "
+          className={`ham-background ${
+            hamOpen
+              ? "scale-normal ham-background-open"
+              : "ham-background-close scale-down "
           }`}
-        ></div>
-        <nav
-          className={`ham-content  ${
-            !hamOpen ? "highly-invisible " : " highly-visible transition-slow"
-          }`}
-          style={{ color: "#0000FF" }}
         >
-          <Link
-            onClick={() => setHamopen(false)}
-            style={{ color: "green" }}
-            href={"/demo"}
-          >
-            Demo
-          </Link>
-          <Link
-            onClick={() => setHamopen(false)}
-            style={{ color: "green" }}
-            href={"/"}
-          >
-            Home
-          </Link>
-        </nav>
+          &nbsp;
+          <nav className={`nav-content ${hamOpen ? "  " : " "}`}>
+            <div
+              className={`nav-content-menu-container  ${
+                hamOpen
+                  ? " nav-content-menu-container-bg-visible "
+                  : " nav-content-menu-container-bg-hidden"
+              }`}
+            >
+              <ul className="nav-content-menu">
+                <Link
+                  href={"/"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove("nav-content-menu-item-delay")
+                  }
+                  className={`nav-content-menu-item nav-content-menu-item-border nav-content-menu-item-short ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown nav-content-menu-item-delay"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <span>Home</span> <HomeIcon fontSize="1rem" />
+                </Link>
+                <Link
+                  href={"/"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove("nav-content-menu-item-delay")
+                  }
+                  className={`nav-content-menu-item nav-content-menu-item-border nav-content-menu-item-short ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown nav-content-menu-item-delay"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <span>Resume</span> <DownloadIcon fontSize="1rem" />
+                </Link>
+                <Link
+                  href={"/"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove("nav-content-menu-item-delay")
+                  }
+                  className={`nav-content-menu-item nav-content-menu-item-border nav-content-menu-item-short ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown nav-content-menu-item-delay"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <span> All Projects</span>{" "}
+                  <AccountTreeRoundedIcon fontSize="1rem" />
+                </Link>
+                <Link
+                  href={"/"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove("nav-content-menu-item-delay")
+                  }
+                  className={`nav-content-menu-item nav-content-menu-item-border nav-content-menu-item-short ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown nav-content-menu-item-delay"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <span> About Me</span> <InfoRoundedIcon fontSize="1rem" />
+                </Link>
+                <Link
+                  href={"/"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove("nav-content-menu-item-delay")
+                  }
+                  className={`nav-content-menu-item nav-content-menu-item-border nav-content-menu-item-short ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown nav-content-menu-item-delay"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <span>I Write Sometimes</span>
+                  <AutoStoriesRoundedIcon fontSize="1rem" />
+                </Link>
+
+                <li
+                  className={` nav-content-menu-caption ${
+                    hamOpen
+                      ? " nav-content-menu-caption-shown"
+                      : " nav-content-menu-caption-hidden"
+                  }`}
+                >
+                  Get Connected
+                </li>
+                <Link
+                  href={"mailto:khanfahimfaisal@gmail.com"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove(
+                      "nav-content-menu-item-delay-long"
+                    )
+                  }
+                  className={` nav-content-menu-item-long  mt-2 ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown  nav-content-menu-item-delay-long"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <EmailIcon
+                    style={{
+                      color: "white",
+                    }}
+                    fontSize="1rem"
+                  />{" "}
+                  <span> khanfahimfaisal@gmail.com</span>
+                </Link>
+                <Link
+                  target="_blank"
+                  href={"https://linkedin.com/in/fahim-faisal-khan/"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove(
+                      "nav-content-menu-item-delay-long"
+                    )
+                  }
+                  className={` nav-content-menu-item-long  ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown  nav-content-menu-item-delay-long"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <LinkedInIcon style={{ color: "#0077B5" }} fontSize="1rem" />{" "}
+                  <span> linkedin.com/in/fahim-faisal-khan</span>
+                </Link>
+                <Link
+                  target="_blank"
+                  href={"https://wa.link/ffj1h0"}
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove(
+                      "nav-content-menu-item-delay-long"
+                    )
+                  }
+                  className={` nav-content-menu-item-long  ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown  nav-content-menu-item-delay-long"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  <WhatsAppIcon style={{ color: "#075E54" }} fontSize="1rem" />
+
+                  <span> wa.link/ffj1h0</span>
+                </Link>
+                <li
+                  onMouseEnter={(e) =>
+                    e?.target?.classList?.remove(
+                      "nav-content-menu-item-delay-long"
+                    )
+                  }
+                  className={`   nav-content-menu-item-short nav-content-menu-item-more ${
+                    hamOpen
+                      ? "nav-content-menu-item-shown  nav-content-menu-item-delay-long"
+                      : "nav-content-menu-item-hidden"
+                  }`}
+                >
+                  {/* <WhatsAppIcon style={{ color: "#075E54" }} fontSize="1rem" /> */}
+
+                  <span>
+                    {" "}
+                    <Link
+                      href={"https://github.com/FahimFaisalKhan"}
+                      target="_blank"
+                    >
+                      GH
+                    </Link>{" "}
+                  </span>
+                  <span>
+                    {" "}
+                    <Link
+                      href={"https://www.instagram.com/rage.cave/"}
+                      target="_blank"
+                    >
+                      IG
+                    </Link>
+                  </span>
+                  <span>
+                    {" "}
+                    <Link
+                      href={"https://www.facebook.com/KhanFahimFaisal/"}
+                      target="_blank"
+                    >
+                      {" "}
+                      FB
+                    </Link>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </section>
+    </>
   );
 };
 

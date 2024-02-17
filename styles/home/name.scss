@@ -1,17 +1,52 @@
 @use "_mixins" as mx;
+.name-container {
+  margin-top: 3.5rem;
+}
 .draw-line {
   //   height: 250px;
-  stroke: aqua;
+  stroke: var(--quaternary);
   stroke-width: 4px;
   fill: transparent;
   stroke-dasharray: 435;
   stroke-dashoffset: 435;
-
-  animation: animate 10s forwards;
+}
+.animate-name-line {
+  animation: animate 2s forwards linear;
 }
 
 @include mx.keyframes(animate) {
   to {
     stroke-dashoffset: 0;
+  }
+}
+.name-md,
+.name-sm,
+.name-xs {
+  display: none;
+}
+@media screen and (max-width: 991px) {
+  .name-lg {
+    display: none;
+  }
+  .name-md {
+    display: block;
+
+    // overflow: hidden;
+  }
+}
+@media screen and (max-width: 526px) {
+  .name-md {
+    display: none;
+  }
+  .name-sm {
+    display: block;
+  }
+}
+@media screen and (max-width: 400px) {
+  .name-sm {
+    display: none;
+  }
+  .name-xs {
+    display: block;
   }
 }

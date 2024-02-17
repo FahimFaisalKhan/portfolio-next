@@ -4,7 +4,9 @@ const HamButton = ({ hamOpen, setHamopen }) => {
   return (
     <div
       onClick={() => setHamopen(!hamOpen)}
-      className={`ham-button ${hamOpen ? "ham-button-clicked" : ""}`}
+      className={`ham-button ${
+        hamOpen ? "ham-button-clicked" : "ham-button-unclicked"
+      }`}
     >
       <div className="ham-button-wrapper">
         {" "}

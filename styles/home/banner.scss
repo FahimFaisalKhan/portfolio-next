@@ -1,0 +1,80 @@
+.banner {
+  // margin-top: 50rem;
+  padding: 4.5rem 3.25rem;
+  display: flex;
+  height: 50rem;
+  background: var(--base-transp);
+  border-radius: var(--rounded-sm);
+  width: 100%;
+  &-left {
+    width: 55%;
+    padding-left: 1.5rem;
+  }
+  &-right {
+    width: 45%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  &-bg {
+    height: 100%;
+    // background: linear-gradient(
+    //     to bottom,
+    //     transparent 0%,
+    //     transparent 45%,
+    //     var(--base) 90%
+    //   ),
+    //   url("/images/fahim.png");
+    // background-size: cover;
+    // background-position: center;
+  }
+}
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  width: 60%;
+  margin-top: 33px;
+
+  &-item {
+    text-align: center;
+    border: 3px solid var(--quaternary);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+
+    font-size: var(--font-base);
+    border-radius: var(--rounded-sm);
+    box-shadow: 0 0 12px 2.5px var(--quinary-opacited);
+
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 12px 2.5px var(--quinary);
+    }
+
+    &-left {
+      transform: translateX(-20rem);
+      opacity: 0;
+      transition: all var(--standard-time);
+      // transition: 3s;
+    }
+    &-right {
+      transform: translateX(20rem);
+      opacity: 0;
+      transition: all var(--standard-time);
+      // transition: 3s;
+    }
+    &-transition-back {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all var(--standard-time);
+      // transition: 3s;
+    }
+  }
+}
+.intro-text {
+  color: var(--text);
+  transition: all var(--standard-time);
+}
