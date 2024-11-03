@@ -1,0 +1,118 @@
+.heading-primary span {
+    display: inline-block;
+    //   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3), 0 5px 0 #ccc;
+    border: none;
+
+    //   line-height: 100px;
+    //#TODO:  puting  zindex -1 doesnt seem standard code , intead try keeping zindex 1 or the whole zindex of main body apart from nav unanimus
+
+    transform: translate(-1rem, 1.5rem);
+    opacity: 0;
+}
+
+.heading-primary span:first-child {
+    padding-left: 0;
+}
+
+.heading-primary-animate {
+    animation: jumb var(--short-time) forwards linear;
+}
+
+@keyframes jumb {
+    0% {
+        transform: translate(-1rem, 1.5rem);
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.heading-primary span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.heading-primary span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.heading-primary span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.heading-primary span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.heading-primary span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.heading-primary span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.heading-primary span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.heading-primary span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.heading-primary span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+.heading-primary span:nth-child(10) {
+    animation-delay: 0.9s;
+}
+
+.heading-primary span:nth-child(11) {
+    animation-delay: 1s;
+}
+
+.heading-primary span:nth-child(12) {
+    animation-delay: 1.01s;
+}
+
+.heading-primary span:nth-child(13) {
+    animation-delay: 1.11s;
+}
+
+.heading-primary span:nth-child(14) {
+    animation-delay: 1.21s;
+}
+
+.heading-primary span:nth-child(15) {
+    animation-delay: 1.31s;
+}
+
+.heading-primary span:nth-child(16) {
+    animation-delay: 1.41s;
+}
+
+.heading-primary span:nth-child(17) {
+    animation-delay: 1.51s;
+}
+
+.heading-primary span:nth-child(18) {
+    animation-delay: 1.61s;
+}
+
+.heading-primary span:nth-child(19) {
+    animation-delay: 1.71s;
+}
+
+.heading-primary span:nth-child(20) {
+    animation-delay: 1.81s;
+}
+
+.heading-primary span:nth-child(21) {
+    animation-delay: 1.91s;
+}
+
+.heading-primary span:nth-child(22) {
+    animation-delay: 2.01s;
+}

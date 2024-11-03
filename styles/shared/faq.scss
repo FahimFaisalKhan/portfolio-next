@@ -1,0 +1,104 @@
+@use "_mixins" as mx;
+.faq {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0rem;
+    row-gap: 1rem;
+    @include mx.respond(tablg-laptop) {
+        padding: 2rem 2.5rem;
+        row-gap: 1.5rem;
+    }
+    &-item {
+        border-radius: var(--rounded-sm);
+        display: flex;
+        flex-direction: column;
+        transition: all var(--standard-time);
+        @include mx.respond(tablg-laptop) {
+            border-radius: var(--rounded-lg);
+        }
+        &-heading {
+            display: flex;
+            align-items: center;
+            padding: 0.2rem 1rem;
+            border: 3px solid var(--base);
+            border-radius: var(--rounded-sm);
+            cursor: pointer;
+            @include mx.respond(tablg-laptop) {
+                border-radius: var(--rounded-lg);
+                padding: 0.6rem 2rem;
+            }
+            &-text {
+                flex-grow: 1;
+                font-size: var(--font-lg);
+                letter-spacing: 4px;
+                font-weight: 500;
+                @include mx.respond(tablg-laptop) {
+                    font-size: var(--font-m);
+                }
+            }
+            &-icon {
+                width: 5%;
+                font-size: var(--font-ml);
+                @include mx.respond(tablg-laptop) {
+                    font-size: var(--font-xl);
+                }
+            }
+            &-open {
+                border-bottom: 0px solid transparent;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                background: var(--base-transp);
+                color: var(--text);
+            }
+            &-close {
+                border-bottom: 3px solid var(--base);
+                border-bottom-right-radius: var(--rounded-sm);
+                border-bottom-left-radius: var(--rounded-sm);
+
+                background: transparent;
+                color: var(--text);
+                @include mx.respond(tablg-laptop) {
+                    border-bottom-right-radius: var(--rounded-lg);
+                    border-bottom-left-radius: var(--rounded-lg);
+                }
+            }
+        }
+
+        &-details {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border: 3px solid var(--base);
+            border-radius: var(--rounded-sm);
+            transition: all var(--very-short-time);
+            @include mx.respond(tablg-laptop) {
+                border-radius: var(--rounded-lg);
+                transition: all var(--standard-time);
+            }
+            &-open {
+                border-top: 0px solid transparent;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                transform: scaleY(1);
+                opacity: 1;
+                height: fit-content;
+                @include mx.respond(tablg-laptop) {
+                    height: 190px;
+                }
+            }
+            &-close {
+                transform: scaleY(0);
+                visibility: hidden;
+                padding-top: 0;
+                padding-bottom: 0;
+                height: 0;
+                opacity: 0;
+                border-top-right-radius: var(--rounded-sm);
+                border-top-left-radius: var(--rounded-sm);
+                @include mx.respond(tablg-laptop) {
+                    border-top-right-radius: var(--rounded-lg);
+                    border-top-left-radius: var(--rounded-lg);
+                }
+            }
+        }
+    }
+}

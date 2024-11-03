@@ -1,29 +1,40 @@
 //dark theme
 $colors-dark: (
-  text: #eeeeee,
-  text2: #ffe270,
+    text: #eeeeee,
+    // text2: #7bf1c8,
+    text2: #ffeca0,
 
-  base: #000000,
-  secondary: #222222,
-  tertiary: #4e4e4e,
-  quaternary: #999999,
-  quinary: #d8d8d8,
-  focus: #7bf1c8,
+    base2: #02010a,
+    base: #03031c,
+    base-transp: #03031ce0,
+    base2-transp: #02010ae0,
+    secondary: #232339,
+    tertiary: #4e4e4e,
+    quaternary: #999999,
+    quinary: #d8d8d8,
+    quinary-opacited: #d8d8d865,
+    focus: #97cde3,
 );
 
 //light-theme
 $colors: (
-  text: #111111,
-  text2: #034748,
-  base: #ffffff,
-  secondary: #bbbbbb,
-  tertiary: #727474,
-  quaternary: #383838,
-  quinary: #121212,
-  focus: #23231a,
+    text: #111111,
+    text2: #003321,
+    base: #d8d8d8,
+    base2: #131236,
+    base-transp: #d8d8d8e5,
+    secondary: #bbbbbb,
+    tertiary: #727474,
+    quaternary: #383838,
+    quinary: #121212,
+    quinary-opacited: #12121265,
+    focus: #044b4d,
 );
 
 //BREAKPOINTS
+$phone-xxs: 368px;
+$phone-xs: 440px;
+$phone-sm: 508px;
 $phone: 576px;
 $tablet: 768px;
 $tablet-lg: 992px;

@@ -1,0 +1,126 @@
+@use "_mixins" as mx;
+.banner {
+    // margin-top: 50rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    @include mx.respond(tablg-laptop) {
+        height: 50rem;
+        flex-direction: row;
+        padding: 4.5rem 3.25rem;
+    }
+
+    background: var(--base-transp);
+    border-radius: var(--rounded-sm);
+    width: 100%;
+
+    &-left {
+        @include mx.respond(tablg-laptop) {
+            width: 55%;
+            padding-left: 1.5rem;
+        }
+    }
+
+    &-right {
+        @include mx.respond(tablg-laptop) {
+            width: 45%;
+            text-align: center;
+        }
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    &-bg {
+        height: 100%;
+        // background: linear-gradient(
+        //     to bottom,
+        //     transparent 0%,
+        //     transparent 45%,
+        //     var(--base) 90%
+        //   ),
+        //   url("/images/fahim.png");
+        // background-size: cover;
+        // background-position: center;
+    }
+}
+
+.tag {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+
+    @include mx.respond(phone-sm) {
+        width: 70%;
+    }
+    @include mx.respond(phone-xs) {
+        width: 85%;
+    }
+    @include mx.respond(phone-xxs) {
+        width: 100%;
+    }
+    width: 60%;
+    margin-top: 33px;
+
+    @include mx.respond(tab-tablg) {
+        width: 50%;
+    }
+    @include mx.respond(tablg-laptop) {
+        width: 80%;
+    }
+    @include mx.respond(laptop-laptopmd) {
+        width: 70%;
+    }
+    @include mx.respond(laptopmd-laptoplg) {
+        width: 60%;
+    }
+    &-item {
+        text-align: center;
+
+        color: var(--text);
+
+        font-size: var(--font-xs);
+        padding: 0.75rem 0.9rem;
+        border: 2px solid var(--quaternary);
+        border-radius: var(--rounded-sm);
+        box-shadow: 0 0 12px 2.5px var(--quinary-opacited);
+
+        cursor: pointer;
+        @include mx.respond(tablg-laptop) {
+            font-size: var(--font-base);
+            padding: 0.75rem 1rem;
+            border: 3px solid var(--quaternary);
+        }
+        &:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 12px 2.5px var(--quinary);
+        }
+
+        &-left {
+            transform: translateX(-20rem);
+            opacity: 0;
+            transition: all var(--standard-time);
+            // transition: 3s;
+        }
+
+        &-right {
+            transform: translateX(20rem);
+            opacity: 0;
+            transition: all var(--standard-time);
+            // transition: 3s;
+        }
+
+        &-transition-back {
+            transform: translateX(0);
+            opacity: 1;
+            transition: all var(--standard-time);
+            // transition: 3s;
+        }
+    }
+}
+
+.intro-text {
+    color: var(--text);
+    transition: all var(--standard-time);
+}

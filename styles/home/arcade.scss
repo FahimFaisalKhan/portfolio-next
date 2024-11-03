@@ -1,0 +1,46 @@
+@use "_mixins" as mx;
+.arc-game {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 2rem;
+    @include mx.respond(tablg-laptop) {
+        margin-top: 6rem;
+        flex-direction: row;
+    }
+    &-card {
+        padding: 0 1rem;
+        @include mx.respond(tablg-laptop) {
+            width: 50%;
+            padding: auto;
+        }
+
+        &-btn {
+            background-color: var(--quaternary);
+            color: var(--base);
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+            font-weight: 600;
+            font-size: var(--font-lg);
+            transition: all var(--very-short-time);
+
+            @include mx.respond(tablg-laptop) {
+                width: 50%;
+            }
+            &:hover {
+                background-color: var(--base);
+                color: var(--quaternary);
+            }
+        }
+        &-details {
+            margin-top: 1rem;
+            padding: 0.75rem 0.75rem 0.75rem 0;
+            height: fit-content;
+            @include mx.respond(tablg-laptop) {
+                height: 180px;
+            }
+        }
+    }
+}

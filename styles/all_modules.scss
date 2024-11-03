@@ -6,7 +6,23 @@
 // @use "./_site_variables.scss" ;
 @use "./utils.scss";
 
-@use "./_home.scss";
+@use "home/_home.scss";
 
 @use "shared/_hamburger.scss";
+@use "shared/scrollbar.scss";
 @use "home/name.scss";
+@use "home/intro.scss";
+@use "home/banner.scss";
+@use "home/projects.scss";
+@use "home/skills.scss";
+
+@use "home/other-works.scss";
+@use "home/certificates.scss";
+@use "home/lanframe.scss";
+@use "home/arcade.scss";
+@use "shared/footer.scss";
+@use "shared/faq.scss";
+
+@use "about/abt_banner.scss";
+@use "about/profession.scss";
+@use "about/passion.scss";
